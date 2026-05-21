@@ -36,7 +36,7 @@ export function ThemeToggle() {
 
   if (!isMounted) {
     return (
-      <Button isDisabled size="sm" variant="secondary">
+      <Button size="sm" variant="secondary">
         Switch theme
       </Button>
     );

@@ -39,7 +39,7 @@ export type PortfolioProfile = {
     name: string;
     issuer: string;
     score: string;
-    validityPeriod: string;
+    issuedDate: string;
     image: {
       src: string;
       width: number;
@@ -312,7 +312,7 @@ export const portfolioProfile: PortfolioProfile = {
       name: "TOEIC Listening and Reading",
       issuer: "ETS",
       score: "715",
-      validityPeriod: "Issued Oct 2025 · Expires Oct 2027",
+      issuedDate: "Issued Oct 2025",
       image: {
         src: "/img/toeicLR.jpg",
         width: 800,
@@ -323,7 +323,7 @@ export const portfolioProfile: PortfolioProfile = {
       name: "TOEIC Speaking and Writing",
       issuer: "ETS",
       score: "270",
-      validityPeriod: "Issued Aug 2025 · Expires Aug 2027",
+      issuedDate: "Issued Aug 2025",
       image: {
         src: "/img/toeicSW.jpg",
         width: 1024,

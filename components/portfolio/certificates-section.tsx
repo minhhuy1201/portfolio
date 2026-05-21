@@ -1,9 +1,10 @@
 "use client";
 
-import { Avatar, Button, Modal, Separator } from "@heroui/react";
-import Image from "next/image";
 import { portfolioImages } from "@/app/(portfolio)/data/images";
 import type { PortfolioProfile } from "@/app/(portfolio)/data/profile";
+import { Avatar, Button, Modal, Separator } from "@heroui/react";
+import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 
 type CertificatesSectionProps = {
   certificates: PortfolioProfile["certificates"];
@@ -33,21 +34,28 @@ const certificateModalClassNames = {
 /**
  * Renders the Certificates section from the certificate list.
  *
- * @param props List of certificates, issuers, scores, and validity periods.
+ * @param props List of certificates, issuers, scores, and issued dates.
  * @returns A timeline-based Certificates block.
  */
-export function CertificatesSection({ certificates }: CertificatesSectionProps) {
+export function CertificatesSection({
+  certificates,
+}: CertificatesSectionProps) {
   return (
     <article className="py-2">
       <h2 className="mb-4 text-2xl font-semibold">Certificates</h2>
       <ul className="space-y-4">
         {certificates.map((item) => (
-          <li key={`${item.name}-${item.score}`}>
+          <li key={`${item.name}-${item.score}`} className="group/card relative">
             <Modal>
               <Button
-                className="h-auto! w-full min-w-0 items-stretch justify-start gap-4 rounded-none px-0! py-0! text-left text-foreground hover:text-foreground"
+                className="absolute inset-0 z-0 h-auto! w-full rounded-none bg-transparent! px-0! py-0! hover:bg-transparent! data-[hover=true]:bg-transparent!"
                 variant="ghost"
               >
+                <span className="sr-only">
+                  View {item.name} certificate image
+                </span>
+              </Button>
+              <div className="pointer-events-none relative z-10 flex gap-4">
                 <Separator
                   aria-hidden="true"
                   className="self-stretch"
@@ -66,20 +74,25 @@ export function CertificatesSection({ certificates }: CertificatesSectionProps) 
                         {item.issuer.slice(0, 2)}
                       </Avatar.Fallback>
                     </Avatar>
-                    <div className="min-w-0 space-y-1">
-                      <p className="truncate text-lg font-medium">
-                        {item.name} - {item.score}
-                      </p>
-                      <p className="text-base text-muted">
-                        {item.validityPeriod}
-                      </p>
-                      <p className="text-base italic text-muted">
-                        Click to see image
-                      </p>
+                    <div className="min-w-0 flex-1 space-y-1">
+                      <div className="flex items-baseline justify-between gap-4">
+                        <p className="flex min-w-0 items-baseline gap-1.5 text-lg font-medium">
+                          <span className="truncate">
+                            {item.name} - {item.score}
+                          </span>
+                          <ExternalLink
+                            aria-hidden="true"
+                            className="lucide lucide-external-link size-4 items-baseline align-bottom translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover/card:translate-x-1 group-hover/card:opacity-100"
+                          />
+                        </p>
+                        <p className="shrink-0 text-base text-muted">
+                          {item.issuedDate}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </Button>
+              </div>
               <Modal.Backdrop
                 className={certificateModalClassNames.backdrop}
                 variant="blur"
