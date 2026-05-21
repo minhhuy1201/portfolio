@@ -8,4 +8,7 @@ export const portfolioImages = {
   school: {
     uit: "/img/logoUIT.png",
   },
+  certificate: {
+    ets: "/img/logoETS.png",
+  },
 } as const;

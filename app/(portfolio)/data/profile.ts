@@ -38,7 +38,13 @@ export type PortfolioProfile = {
   certificates: Array<{
     name: string;
     issuer: string;
-    year: string;
+    score: string;
+    validityPeriod: string;
+    image: {
+      src: string;
+      width: number;
+      height: number;
+    };
   }>;
   skills: string[];
 };
@@ -303,14 +309,26 @@ export const portfolioProfile: PortfolioProfile = {
   ],
   certificates: [
     {
-      name: "Google UX Design Certificate",
-      issuer: "Google",
-      year: "2023",
+      name: "TOEIC Listening and Reading",
+      issuer: "ETS",
+      score: "715",
+      validityPeriod: "Issued Oct 2025 · Expires Oct 2027",
+      image: {
+        src: "/img/toeicLR.jpg",
+        width: 800,
+        height: 560,
+      },
     },
     {
-      name: "Meta Front-End Developer Certificate",
-      issuer: "Meta",
-      year: "2024",
+      name: "TOEIC Speaking and Writing",
+      issuer: "ETS",
+      score: "270",
+      validityPeriod: "Issued Aug 2025 · Expires Aug 2027",
+      image: {
+        src: "/img/toeicSW.jpg",
+        width: 1024,
+        height: 558,
+      },
     },
   ],
   skills: [
