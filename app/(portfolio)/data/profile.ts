@@ -38,9 +38,11 @@ export type PortfolioProfile = {
   certificates: Array<{
     name: string;
     issuer: string;
-    score: string;
+    issuerLogo: string;
+    score?: string;
     issuedDate: string;
-    image: {
+    link?: string;
+    image?: {
       src: string;
       width: number;
       height: number;
@@ -311,6 +313,7 @@ export const portfolioProfile: PortfolioProfile = {
     {
       name: "TOEIC Listening and Reading",
       issuer: "ETS",
+      issuerLogo: portfolioImages.certificate.ets,
       score: "715",
       issuedDate: "Issued Oct 2025",
       image: {
@@ -322,6 +325,7 @@ export const portfolioProfile: PortfolioProfile = {
     {
       name: "TOEIC Speaking and Writing",
       issuer: "ETS",
+      issuerLogo: portfolioImages.certificate.ets,
       score: "270",
       issuedDate: "Issued Aug 2025",
       image: {
@@ -329,6 +333,13 @@ export const portfolioProfile: PortfolioProfile = {
         width: 1024,
         height: 558,
       },
+    },
+    {
+      name: "SQL (Intermediate)",
+      issuer: "HackerRank",
+      issuerLogo: portfolioImages.certificate.hackerrank,
+      issuedDate: "Issued Apr 2023",
+      link: "https://www.hackerrank.com/certificates/c76b647eef86",
     },
   ],
   skills: [

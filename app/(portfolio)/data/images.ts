@@ -10,5 +10,6 @@ export const portfolioImages = {
   },
   certificate: {
     ets: "/img/logoETS.png",
+    hackerrank: "/img/hackerrankLogo.png",
   },
 } as const;
