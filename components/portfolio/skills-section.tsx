@@ -22,7 +22,7 @@ type SkillCategory = {
 
 const skillCategories: SkillCategory[] = [
   {
-    name: "Programming/Markup Languages",
+    name: "Programming",
     items: [
       {
         name: "Java",
@@ -56,15 +56,6 @@ const skillCategories: SkillCategory[] = [
           {
             label: "Python",
             src: techIconSources.python,
-          },
-        ],
-      },
-      {
-        name: "HTML",
-        icons: [
-          {
-            label: "HTML",
-            src: techIconSources.html,
           },
         ],
       },
@@ -170,20 +161,20 @@ const skillCategories: SkillCategory[] = [
         ],
       },
       {
+        name: "Postman",
+        icons: [
+          {
+            label: "Postman",
+            src: techIconSources.postman,
+          },
+        ],
+      },
+      {
         name: "Git (GitLab, GitHub)",
         icons: [
           { label: "Git", src: techIconSources.git },
           { label: "GitLab", src: techIconSources.gitlab },
           { label: "GitHub", src: techIconSources.github },
-        ],
-      },
-      {
-        name: "SVN",
-        icons: [
-          {
-            label: "SVN",
-            src: techIconSources.subversion,
-          },
         ],
       },
     ],
@@ -202,7 +193,7 @@ export function SkillsSection() {
       <div className="space-y-4">
         {skillCategories.map((category) => (
           <section key={category.name} aria-label={category.name} className="space-y-2">
-            <h3 className="text-base font-medium text-muted">{category.name}</h3>
+            <h3 className="text-base font-medium">{category.name}</h3>
             <ul className="flex flex-wrap gap-3">
               {category.items.map((skill) => (
                 <li key={skill.name}>
