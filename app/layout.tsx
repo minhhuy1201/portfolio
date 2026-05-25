@@ -38,7 +38,7 @@ const jetbrainsMonoNerd = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Huy Kirito Portfolio",
+  title: "Huy Minh Dao",
   description: "Portfolio website built with Next.js and HeroUI v3.",
 };
 

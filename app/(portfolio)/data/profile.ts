@@ -52,8 +52,8 @@ export type PortfolioProfile = {
 };
 
 export const portfolioProfile: PortfolioProfile = {
-  name: "Huy Kirito",
-  role: "Frontend Developer",
+  name: "Huy Minh Dao",
+  role: "Software Engineer",
   tagline: "Welcome.",
   about:
     "I am an IT enthusiast, always seeking new challenges. I focus on backend development while maintaining strong full-stack skills. Outside of work, I explore new technologies, especially Linux, and deepen my understanding of system-level concepts.",

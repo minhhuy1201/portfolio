@@ -7,7 +7,6 @@ import { ExperienceSection } from "@/components/portfolio/experience-section";
 import { HandWrittenUnderline } from "@/components/portfolio/hand-written-underline";
 import { SkillsSection } from "@/components/portfolio/skills-section";
 import { TypewriterText } from "@/components/portfolio/typewriter-text";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 const ABOUT_UNDERLINE_KEYWORDS = ["backend", "full-stack", "Linux", "system-level"];
 const aboutUnderlineRegex = new RegExp(
@@ -71,10 +70,6 @@ export function PortfolioHero() {
       <EducationSection education={portfolioProfile.education} />
       <CertificatesSection certificates={portfolioProfile.certificates} />
       <SkillsSection />
-
-      <div className="flex w-full items-center justify-between gap-3">
-        <ThemeToggle />
-      </div>
     </section>
   );
 }

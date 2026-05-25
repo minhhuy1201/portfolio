@@ -1,6 +1,6 @@
-# Huy Kirito Portfolio
+# Huy Portfolio
 
-Minimal personal portfolio for Huy Kirito, a frontend developer with full-stack and backend experience.
+Minimal personal portfolio for Huy, a frontend developer with full-stack and backend experience.
 
 ## Stack
 

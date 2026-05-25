@@ -1,8 +1,21 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
 import { Button } from "@heroui/react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useSyncExternalStore, type ComponentProps } from "react";
+
+type ThemeToggleProps = Pick<
+  ComponentProps<typeof Button>,
+  "onPointerLeave" | "onPointerMove"
+> & {
+  "aria-label"?: string;
+  className?: string;
+  iconClassName?: string;
+  isIconOnly?: boolean;
+  size?: "sm" | "md" | "lg";
+  variant?: "primary" | "secondary" | "tertiary" | "outline" | "ghost" | "danger";
+};
 
 function subscribeToClientSnapshot() {
   return () => {};
@@ -21,7 +34,16 @@ function getServerSnapshot() {
  *
  * @returns A button that toggles the current theme.
  */
-export function ThemeToggle() {
+export function ThemeToggle({
+  "aria-label": ariaLabel = "Toggle theme",
+  className,
+  iconClassName: customIconClassName,
+  isIconOnly = false,
+  onPointerLeave,
+  onPointerMove,
+  size = "sm",
+  variant = "secondary",
+}: ThemeToggleProps) {
   const { resolvedTheme, setTheme } = useTheme();
   const isMounted = useSyncExternalStore(
     subscribeToClientSnapshot,
@@ -29,6 +51,9 @@ export function ThemeToggle() {
     getServerSnapshot,
   );
   const isDarkMode = resolvedTheme === "dark";
+  const iconClassName =
+    customIconClassName ??
+    (size === "lg" ? "size-6" : size === "md" ? "size-5" : "size-4");
 
   const handleToggleTheme = () => {
     setTheme(isDarkMode ? "light" : "dark");
@@ -36,15 +61,44 @@ export function ThemeToggle() {
 
   if (!isMounted) {
     return (
-      <Button size="sm" variant="secondary">
-        Switch theme
+      <Button
+        aria-label={isIconOnly ? ariaLabel : undefined}
+        className={className}
+        isIconOnly={isIconOnly}
+        onPointerLeave={onPointerLeave}
+        onPointerMove={onPointerMove}
+        size={size}
+        variant={variant}
+      >
+        {isIconOnly ? (
+          <Moon aria-hidden="true" className={iconClassName} />
+        ) : (
+          "Switch theme"
+        )}
       </Button>
     );
   }
 
   return (
-    <Button onPress={handleToggleTheme} size="sm" variant="secondary">
-      Switch to {isDarkMode ? "Light" : "Dark"}
+    <Button
+      aria-label={isIconOnly ? ariaLabel : undefined}
+      className={className}
+      isIconOnly={isIconOnly}
+      onPointerLeave={onPointerLeave}
+      onPointerMove={onPointerMove}
+      onPress={handleToggleTheme}
+      size={size}
+      variant={variant}
+    >
+      {isIconOnly ? (
+        isDarkMode ? (
+          <Sun aria-hidden="true" className={iconClassName} />
+        ) : (
+          <Moon aria-hidden="true" className={iconClassName} />
+        )
+      ) : (
+        `Switch to ${isDarkMode ? "Light" : "Dark"}`
+      )}
     </Button>
   );
 }

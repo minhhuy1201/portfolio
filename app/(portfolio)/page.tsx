@@ -1,4 +1,5 @@
 import { PortfolioHero } from "@/components/portfolio/portfolio-hero";
+import { PortfolioToolbar } from "@/components/portfolio/portfolio-toolbar";
 
 /**
  * Renders the portfolio homepage at the root route "/".
@@ -9,6 +10,7 @@ export default function PortfolioPage() {
   return (
     <main className="flex min-h-full flex-1 justify-center px-6 py-10 sm:px-8 sm:py-14">
       <PortfolioHero />
+      <PortfolioToolbar />
     </main>
   );
 }
