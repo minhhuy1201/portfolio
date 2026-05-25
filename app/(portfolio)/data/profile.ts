@@ -1,4 +1,5 @@
 import { portfolioImages } from "@/app/(portfolio)/data/images";
+import { techIconSources } from "@/app/(portfolio)/data/tech-icons";
 
 type PortfolioDetail =
   | string
@@ -48,7 +49,6 @@ export type PortfolioProfile = {
       height: number;
     };
   }>;
-  skills: string[];
 };
 
 export const portfolioProfile: PortfolioProfile = {
@@ -91,23 +91,19 @@ export const portfolioProfile: PortfolioProfile = {
           techStack: [
             {
               name: "NestJS",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
+              image: techIconSources.nestjs,
             },
             {
               name: "TypeScript",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+              image: techIconSources.typescript,
             },
             {
               name: "PostgreSQL",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+              image: techIconSources.postgresql,
             },
             {
               name: "Gitlab",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg",
+              image: techIconSources.gitlab,
             },
           ],
         },
@@ -133,28 +129,23 @@ export const portfolioProfile: PortfolioProfile = {
           techStack: [
             {
               name: "NestJS",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
+              image: techIconSources.nestjs,
             },
             {
               name: "NextJS",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+              image: techIconSources.nextjs,
             },
             {
               name: "TypeScript",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+              image: techIconSources.typescript,
             },
             {
               name: "ZITADEL",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zitadel/zitadel-original.svg",
+              image: techIconSources.zitadel,
             },
             {
               name: "PostgreSQL",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+              image: techIconSources.postgresql,
             },
           ],
         },
@@ -197,33 +188,27 @@ export const portfolioProfile: PortfolioProfile = {
           techStack: [
             {
               name: "Java",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+              image: techIconSources.java,
             },
             {
               name: "Spring Boot",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+              image: techIconSources.spring,
             },
             {
               name: "Jmix",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jmix/jmix-original.svg",
+              image: techIconSources.jmix,
             },
             {
               name: "PostgreSQL",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+              image: techIconSources.postgresql,
             },
             {
               name: "Gitlab",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg",
+              image: techIconSources.gitlab,
             },
             {
               name: "Jira",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg",
+              image: techIconSources.jira,
             },
           ],
         },
@@ -237,28 +222,23 @@ export const portfolioProfile: PortfolioProfile = {
           techStack: [
             {
               name: "ReactJS",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+              image: techIconSources.react,
             },
             {
               name: "TypeScript",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+              image: techIconSources.typescript,
             },
             {
               name: "Zustand",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-original.svg",
+              image: techIconSources.zustand,
             },
             {
               name: "Ant Design",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/antdesign/antdesign-original.svg",
+              image: techIconSources.antDesign,
             },
             {
               name: "Tailwind CSS",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+              image: techIconSources.tailwindcss,
             },
           ],
         },
@@ -272,28 +252,23 @@ export const portfolioProfile: PortfolioProfile = {
           techStack: [
             {
               name: "ReactJS",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+              image: techIconSources.react,
             },
             {
               name: "TypeScript",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+              image: techIconSources.typescript,
             },
             {
               name: "Zustand",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-original.svg",
+              image: techIconSources.zustand,
             },
             {
               name: "Ant Design",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/antdesign/antdesign-original.svg",
+              image: techIconSources.antDesign,
             },
             {
               name: "Tailwind CSS",
-              image:
-                "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+              image: techIconSources.tailwindcss,
             },
           ],
         },
@@ -341,15 +316,5 @@ export const portfolioProfile: PortfolioProfile = {
       issuedDate: "Issued Apr 2023",
       link: "https://www.hackerrank.com/certificates/c76b647eef86",
     },
-  ],
-  skills: [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "HeroUI",
-    "Accessibility",
-    "Responsive Design",
-    "Performance Optimization",
   ],
 };

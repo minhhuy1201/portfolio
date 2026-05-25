@@ -70,7 +70,7 @@ export function PortfolioHero() {
       <ExperienceSection experience={portfolioProfile.workExperience[0]} />
       <EducationSection education={portfolioProfile.education} />
       <CertificatesSection certificates={portfolioProfile.certificates} />
-      <SkillsSection skills={portfolioProfile.skills} />
+      <SkillsSection />
 
       <div className="flex w-full items-center justify-between gap-3">
         <ThemeToggle />

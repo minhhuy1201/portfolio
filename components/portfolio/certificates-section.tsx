@@ -1,6 +1,7 @@
 "use client";
 
 import type { PortfolioProfile } from "@/app/(portfolio)/data/profile";
+import { SectionHeading } from "@/components/portfolio/section-heading";
 import { Avatar, Button, Modal, Separator } from "@heroui/react";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
@@ -41,7 +42,7 @@ export function CertificatesSection({
 }: CertificatesSectionProps) {
   return (
     <article className="py-2">
-      <h2 className="mb-4 text-2xl font-semibold">Certificates</h2>
+      <SectionHeading>Certificates</SectionHeading>
       <ul className="space-y-4">
         {certificates.map((item) => {
           const certificateTitle = item.score

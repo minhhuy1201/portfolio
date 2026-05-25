@@ -1,0 +1,31 @@
+const deviconBaseUrl =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
+
+export const techIconSources = {
+  antDesign: `${deviconBaseUrl}/antdesign/antdesign-original.svg`,
+  bootstrap: `${deviconBaseUrl}/bootstrap/bootstrap-original.svg`,
+  cpp: `${deviconBaseUrl}/cplusplus/cplusplus-original.svg`,
+  datagrip: `${deviconBaseUrl}/datagrip/datagrip-original.svg`,
+  git: `${deviconBaseUrl}/git/git-original.svg`,
+  github: `${deviconBaseUrl}/github/github-original.svg`,
+  gitlab: `${deviconBaseUrl}/gitlab/gitlab-original.svg`,
+  html: `${deviconBaseUrl}/html5/html5-original.svg`,
+  intellij: `${deviconBaseUrl}/intellij/intellij-original.svg`,
+  java: `${deviconBaseUrl}/java/java-original.svg`,
+  javascript: `${deviconBaseUrl}/javascript/javascript-original.svg`,
+  jira: `${deviconBaseUrl}/jira/jira-original.svg`,
+  jmix: "/img/jmixLogo.png",
+  mysql: `${deviconBaseUrl}/mysql/mysql-original.svg`,
+  nestjs: `${deviconBaseUrl}/nestjs/nestjs-original.svg`,
+  nextjs: `${deviconBaseUrl}/nextjs/nextjs-original.svg`,
+  postgresql: `${deviconBaseUrl}/postgresql/postgresql-original.svg`,
+  python: `${deviconBaseUrl}/python/python-original.svg`,
+  react: `${deviconBaseUrl}/react/react-original.svg`,
+  spring: `${deviconBaseUrl}/spring/spring-original.svg`,
+  subversion: `${deviconBaseUrl}/subversion/subversion-original.svg`,
+  tailwindcss: `${deviconBaseUrl}/tailwindcss/tailwindcss-original.svg`,
+  typescript: `${deviconBaseUrl}/typescript/typescript-original.svg`,
+  vscode: `${deviconBaseUrl}/vscode/vscode-original.svg`,
+  zitadel: `${deviconBaseUrl}/zitadel/zitadel-original.svg`,
+  zustand: `${deviconBaseUrl}/zustand/zustand-original.svg`,
+} as const;

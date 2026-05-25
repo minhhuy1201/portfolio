@@ -1,6 +1,7 @@
 import { Avatar, Chip, Disclosure, Separator } from "@heroui/react";
 import { BriefcaseBusiness, MapPin } from "lucide-react";
 import type { PortfolioProfile } from "@/app/(portfolio)/data/profile";
+import { SectionHeading } from "@/components/portfolio/section-heading";
 
 type WorkExperienceItem = PortfolioProfile["workExperience"][number];
 type ProjectDetail = WorkExperienceItem["projects"][number]["details"][number];
@@ -48,7 +49,7 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
 
   return (
     <article className="py-2">
-      <h2 className="mb-4 text-2xl font-semibold">Experience</h2>
+      <SectionHeading>Experience</SectionHeading>
       <Disclosure
         id="work-experience"
         aria-label={`Work experience at ${experience.company}`}

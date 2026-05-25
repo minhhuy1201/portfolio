@@ -1,6 +1,7 @@
 import { Avatar } from "@heroui/react";
 import { portfolioImages } from "@/app/(portfolio)/data/images";
 import type { PortfolioProfile } from "@/app/(portfolio)/data/profile";
+import { SectionHeading } from "@/components/portfolio/section-heading";
 import { ExternalLink } from "lucide-react";
 
 type EducationSectionProps = {
@@ -16,7 +17,7 @@ type EducationSectionProps = {
 export function EducationSection({ education }: EducationSectionProps) {
   return (
     <article className="py-2">
-      <h2 className="mb-4 text-2xl font-semibold">Education</h2>
+      <SectionHeading>Education</SectionHeading>
       <div className="space-y-4">
         {education.map((item) => (
           <div
