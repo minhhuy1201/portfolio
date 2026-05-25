@@ -5,6 +5,8 @@ export const techIconSources = {
   antDesign: `${deviconBaseUrl}/antdesign/antdesign-original.svg`,
   bootstrap: `${deviconBaseUrl}/bootstrap/bootstrap-original.svg`,
   cpp: `${deviconBaseUrl}/cplusplus/cplusplus-original.svg`,
+  cursor: "/img/cursorideLogo.png",
+  cursorLight: "/img/cursorideLogoLight.png",
   datagrip: `${deviconBaseUrl}/datagrip/datagrip-original.svg`,
   git: `${deviconBaseUrl}/git/git-original.svg`,
   github: `${deviconBaseUrl}/github/github-original.svg`,

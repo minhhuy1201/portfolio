@@ -7,6 +7,8 @@ import Image from "next/image";
 
 type SkillIcon = {
   src: string;
+  className?: string;
+  darkSrc?: string;
   label: string;
 };
 
@@ -143,6 +145,16 @@ const skillCategories: SkillCategory[] = [
         icons: [{ label: "VSCode", src: techIconSources.vscode }],
       },
       {
+        name: "Cursor IDE",
+        icons: [
+          {
+            label: "Cursor IDE",
+            src: techIconSources.cursor,
+            darkSrc: techIconSources.cursorLight,
+          },
+        ],
+      },
+      {
         name: "IntelliJ IDEA",
         icons: [
           {
@@ -174,7 +186,7 @@ const skillCategories: SkillCategory[] = [
         icons: [
           { label: "Git", src: techIconSources.git },
           { label: "GitLab", src: techIconSources.gitlab },
-          { label: "GitHub", src: techIconSources.github },
+          { label: "GitHub", src: techIconSources.github, className: "dark:invert" },
         ],
       },
     ],
@@ -205,22 +217,53 @@ export function SkillsSection() {
                         type="button"
                       >
                         <span className="flex items-center justify-center gap-1">
-                          {skill.icons.map((icon) => (
-                            <Image
-                              key={icon.label}
-                              alt=""
-                              aria-hidden="true"
-                              className={
-                                skill.icons.length > 1
-                                  ? "size-6 object-contain"
-                                  : "size-8 object-contain"
-                              }
-                              height={28}
-                              unoptimized
-                              width={28}
-                              src={icon.src}
-                            />
-                          ))}
+                          {skill.icons.map((icon) => {
+                            const iconClassName =
+                              skill.icons.length > 1
+                                ? "size-6 object-contain"
+                                : "size-8 object-contain";
+                            const iconClassNames = icon.className
+                              ? `${iconClassName} ${icon.className}`
+                              : iconClassName;
+
+                            if (icon.darkSrc) {
+                              return (
+                                <span key={icon.label}>
+                                  <Image
+                                    alt=""
+                                    aria-hidden="true"
+                                    className={`${iconClassNames} dark:hidden`}
+                                    height={28}
+                                    unoptimized
+                                    width={28}
+                                    src={icon.src}
+                                  />
+                                  <Image
+                                    alt=""
+                                    aria-hidden="true"
+                                    className={`${iconClassNames} hidden dark:block`}
+                                    height={28}
+                                    unoptimized
+                                    width={28}
+                                    src={icon.darkSrc}
+                                  />
+                                </span>
+                              );
+                            }
+
+                            return (
+                              <Image
+                                key={icon.label}
+                                alt=""
+                                aria-hidden="true"
+                                className={iconClassNames}
+                                height={28}
+                                unoptimized
+                                width={28}
+                                src={icon.src}
+                              />
+                            );
+                          })}
                         </span>
                       </button>
                     </Tooltip.Trigger>

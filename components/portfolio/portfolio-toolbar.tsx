@@ -3,13 +3,21 @@
 import { LinkedinIcon } from "@/components/portfolio/linkedin-icon";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button, ButtonGroup, Separator, Toolbar, Tooltip } from "@heroui/react";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, FileUser } from "lucide-react";
 import { useTheme } from "next-themes";
 import { type PointerEvent } from "react";
 
 const BUTTON_MAGNET_STRENGTH_PX = 8;
 
 const contactActions = [
+  {
+    name: "Resume",
+    label: "Open resume",
+    icon: FileUser,
+    onPress: () => {
+      window.open("/pdf/cv.pdf", "_blank", "noopener,noreferrer");
+    },
+  },
   {
     name: "LinkedIn",
     label: "Open LinkedIn",
